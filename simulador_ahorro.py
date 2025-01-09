@@ -29,18 +29,22 @@ while True:
         break
     except ValueError:
         print("¡Error! El dato ingresado no es válido. Solo se aceptan números. Intente nuevamente.")
-
-cantidad_meses = input("Ingrese la cantidad de meses (En el caso de elegir 12 meses, solo presionar Enter): ")
-
-if cantidad_meses == "":
-    meses = 12
-else:
-    meses = int(cantidad_meses)
+        
+while True:
+    try:
+        cantidad_meses = input("Ingrese la cantidad de meses (En el caso de elegir 12 meses, solo presionar Enter): ")
+        if cantidad_meses == "":
+            meses = 12
+        else:
+            meses = int(cantidad_meses)
+        break
+    except ValueError:
+        print("¡Error! El dato ingresado no es válido. Intente nuevamente.")
 
 # Llamando a la función calcular_ahorro() con los datos ingresados en «ingresar_monto» y «meses» como parámetros
-total_ahorrado = calcular_ahorro(ingresar_monto, meses)
+ahorrados = calcular_ahorro(ingresar_monto, meses)
 
-# Se muestra por consola el valor que retorna de la función calcular_ahorro() como valor del argumento «total_ahorrado»
-mostrar_ahorro(total_ahorrado)
+# Se muestra por consola el valor que retorna de la función calcular_ahorro() como valor del argumento «ahorrados»
+mostrar_ahorro(ahorrados)
 
 print('Gracias por utilizar "Simulador de ahorro mensual". ¡Adiós!')
